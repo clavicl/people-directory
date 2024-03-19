@@ -10,7 +10,11 @@ import {
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 
-export default function PersonDetails({ person }: PersonDetailsProps) {
+type Props = {
+  person: Person;
+};
+
+export const PersonDetails: React.FC<Props> = ({ person }) => {
   const router = useRouter();
   const params = useSearchParams();
   const page = params.get("page") || 1;
@@ -57,8 +61,4 @@ export default function PersonDetails({ person }: PersonDetailsProps) {
       </CardFooter>
     </Card>
   );
-}
-
-type PersonDetailsProps = {
-  person: Person;
 };

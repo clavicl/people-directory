@@ -8,7 +8,6 @@ type Props = {
 };
 
 export const PaginationControls = ({ page, onClick }: Props) => {
-  console.log("page in controls:", page);
   const [active, setActive] = React.useState(page);
 
   const getItemProps = (index) =>

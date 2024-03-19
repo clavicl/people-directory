@@ -12,7 +12,6 @@ type Props = {
 };
 
 const HomePage: NextPage<Props> = ({ people, info, page }) => {
-  console.log('page in home:', page);
   const router = useRouter();
 
   const onPaginationClick = (active: number) => {
