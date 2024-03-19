@@ -7,10 +7,15 @@ import {
   CardHeader,
   Typography,
 } from "@material-tailwind/react";
+import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 
 export default function PersonDetails({ person }: PersonDetailsProps) {
   const router = useRouter();
+  const params = useSearchParams();
+  const page = params.get("page") || 1;
+  const seed = params.get("seed") || "";
+
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
@@ -44,7 +49,7 @@ export default function PersonDetails({ person }: PersonDetailsProps) {
       <CardFooter className="pt-0">
         <Button
           onClick={() => {
-            router.back();
+            router.push(`/?page=${page}&seed=${seed}`);
           }}
         >
           Go Back

@@ -4,8 +4,6 @@ import { GetServerSideProps, NextPage } from "next";
 
 type Props = {
   person: Person;
-  seed: string;
-  page: number;
 };
 
 const PeopleDetailsPage: NextPage<Props> = ({ person }: Props) => {
@@ -21,8 +19,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       person: person || null,
-      page: Number(page),
-      seed: seed,
     },
   };
 };
