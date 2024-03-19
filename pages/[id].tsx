@@ -1,4 +1,4 @@
-import PersonDetails from "@/components/PersonDetails";
+import { PersonDetails } from "@/components/PersonDetails";
 import { Person } from "@/types";
 import { GetServerSideProps, NextPage } from "next";
 
